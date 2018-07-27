@@ -1,0 +1,354 @@
+﻿Reusable Part:
+  Name:               GITVLFONE_OMULTI
+  Enabled For RDMLX:  Yes
+  Target Platform:    Browser
+
+  Multilingual Details:
+  - ENG:
+      Description:        "\\OC=VLF-ONE Multilingual Text enroller"
+
+  - FRA:
+      Description:        "VLF-ONE Multilingual Text enroller"
+
+  Source: |
+    * ----------------------------------------------------------------------------------------------------------
+    *
+    *   ########  ##       ########    ###     ######  ########       ##    ##  #######  ######## ########
+    *   ##     ## ##       ##         ## ##   ##    ## ##             ###   ## ##     ##    ##    ##
+    *   ##     ## ##       ##        ##   ##  ##       ##             ####  ## ##     ##    ##    ##
+    *   ########  ##       ######   ##     ##  ######  ######         ## ## ## ##     ##    ##    ######
+    *   ##        ##       ##       #########       ## ##             ##  #### ##     ##    ##    ##
+    *   ##        ##       ##       ##     ## ##    ## ##             ##   ### ##     ##    ##    ##
+    *   ##        ######## ######## ##     ##  ######  ########       ##    ##  #######     ##    ########
+    *
+    *  This components DF_ or UF_ name prefix means it is a shipped demonstration or user example component.
+    *  You must not use it in your production applications because it will change in future VLF versions.
+    *  Instead, copy this code into your own VL object, which is not prefixed VF_, DF_ or UF_, and use that.
+    *
+    * ----------------------------------------------------------------------------------------------------------
+    *
+    *    -> Create a new resuable component with some unique name, say, MYOMULTI.
+    *
+    *    -> Copy the shipped UF_OMULTI code into MYOMULTI (say).
+    *
+    *    -> Check MYOMULTI has ancestor class VF_AC032O by starting with BEGIN_COM ROLE(*EXTENDS #VF_AC032O)
+    *
+    *    -> Compile MYOMULTI.
+    *
+    *    -> Modify the source for UF_OEXEC (or more correctly- your version of it) to use your MTxtLoaderID
+    *    #VLF_ONE.uInitialize Frameworkidentifer("") Logonhandlerid("VF_AC026O") Passwordchangerid("") Mtxtloaderid(MYOMULTI) Themecustomizerid("")
+    *
+    *
+    * --------------------------------------------------------------------------------------------
+    
+    Function Options(*DIRECT)
+    Begin_Com Role(*EXTENDS #VF_AC032O)
+    
+    Mthroutine Name(uLoadMtxtStrings) Options(*REDEFINE)
+    
+    * Load up the standard MTXTS
+    
+    #uSystem.uMTxtValues<Close> := *MTXTUF_CLOSE
+    #uSystem.uMTxtValues<Pin> := *MTXTUF_PIN
+    
+    #uSystem.uMTxtValues<Left> := *Mtxtuf_Left
+    #uSystem.uMTxtValues<Right> := *Mtxtuf_Right
+    #uSystem.uMTxtValues<Top> := *Mtxtuf_Top
+    #uSystem.uMTxtValues<Bottom> := *Mtxtuf_Bottom
+    #uSystem.uMTxtValues<Maximize> := *MTXTUF_MAXIMIZE
+    #uSystem.uMTxtValues<Minimize> := *MTXTUF_Minimize
+    #uSystem.uMTxtValues<Restore> := *MTXTUF_Restore
+    #uSystem.uMTxtValues<RestoreAll> := *MTXTUF_RestoreAll
+    #uSystem.uMTxtValues<Settings> := *MTXTUF_SETTINGS
+    #uSystem.uMTxtValues<MOVELEFT> := *MTXTUF_MOVELEFT
+    #uSystem.uMTxtValues<MOVERIGHT> := *MTXTUF_MOVERIGHT
+    #uSystem.uMTxtValues<MOVETOP> := *MTXTUF_MOVETOP
+    #uSystem.uMTxtValues<MOVEBOTTOM> := *MTXTUF_MOVEBOTTOM
+    #uSystem.uMTxtValues<FULLHEIGHT> := *MTXTUF_FULLHEIGHT
+    #uSystem.uMTxtValues<FULLWIDTH> := *MTXTUF_FULLWIDTH
+    
+    #uSystem.uMTxtValues<MoreOptions> := *MTXTUF_MoreOptions
+    #uSystem.uMTxtValues<MoreSettings> := *MTXTUF_SETTING
+    #uSystem.uMTxtValues<MoreAssistance> := *MTXTUF_ASSIST
+    
+    
+    #uSystem.uMTxtValues<PLEASEWAIT> := *MTXTUF_PLEASEWAIT
+    
+    #uSystem.uMTxtValues<ARRANGE_VERT> := *MTXTUF_ARRANGE_VERT
+    #uSystem.uMTxtValues<ARRANGE_HORZ> := *MTXTUF_ARRANGE_HORZ
+    #uSystem.uMTxtValues<ARRANGE_GROW> := *MTXTUF_ARRANGE_GROW
+    #uSystem.uMTxtValues<ARRANGE_GCOL> := *MTXTUF_ARRANGE_GCOL
+    #uSystem.uMTxtValues<ARRANGE_TILE> := *MTXTUF_ARRANGE_TILE
+    #uSystem.uMTxtValues<AUTO_TILE> := *MTXTUF_AUTO_TILE
+    
+    #uSystem.uMTxtValues<Date1> := *MTXTUF_Date1
+    #uSystem.uMTxtValues<Time1> := *MTXTUF_Time1
+    #uSystem.uMTxtValues<User> := *MTXTUF_User
+    #uSystem.uMTxtValues<Language> := *MTXTUF_Language
+    #uSystem.uMTxtValues<Busy> := *MTXTUF_Busy
+    #uSystem.uMTxtValues<Ready> := *MTXTUF_Ready
+    #uSystem.uMTxtValues<No_MESSAGES> := *MTXTUF_NO_MESSAGES
+    #uSystem.uMTxtValues<MSG_BEGIN> := *MTXTUF_MSG_BEGIN
+    #uSystem.uMTxtValues<MSG_END> := *MTXTUF_MSG_END
+    
+    #uSystem.uMTxtValues<BO_NAVIGATOR> := *MTXTUF_BO_NAVIGATOR
+    #uSystem.uMTxtValues<SESSIONENDED> := *MTXTUF_SESSIONENDED
+    #uSystem.uMTxtValues<SEARCH> := *MTXTUF_SEARCH
+    #uSystem.uMTxtValues<RECENT> := *MTXTUF_RECENT
+    #uSystem.uMTxtValues<SEARCH_RES> := *MTXTUF_SEARCH_RES
+    #uSystem.uMTxtValues<TYPE_SEARCH> := *MTXTUF_TYPE_SEARCH
+    #uSystem.UMTXTVALUES<SEARCH_LIMIT> := *MTXTUF_SEARCH_LIMIT
+    
+    
+    #uSystem.uMTxtValues<NEXT1> := *MTXTUF_NEXT1
+    #uSystem.uMTxtValues<PREVIOUS1> := *MTXTUF_PREVIOUS1
+    
+    #uSystem.uMTxtValues<FILT_LEFT> := *MTXTUF_FILT_LEFT
+    #uSystem.uMTxtValues<FILT_RIGHT> := *MTXTUF_FILT_RIGHT
+    #uSystem.uMTxtValues<FILT_TOP> := *MTXTUF_FILT_TOP
+    #uSystem.uMTxtValues<FILT_BOTTOM> := *MTXTUF_FILT_BOTTOM
+    #uSystem.uMTxtValues<disablpopups> := *MTXTUF_disablpopups
+    #uSystem.uMTxtValues<enablepopups> := *MTXTUF_enablepopups
+    
+    
+    #uSystem.uMTxtValues<SETTINGS2> := *MTXTUF_SETTINGS2
+    #uSystem.uMTxtValues<ASSISTANCE> := *MTXTUF_ASSISTANCE
+    #uSystem.uMTxtValues<SELECTAPPL> := *MTXTUF_SELECTAPPL
+    
+    
+    #uSystem.uMTxtValues<SERVERCONFIG> := *MTXTUF_SERVERCONFIG
+    #uSystem.uMTxtValues<IPADDRESS> := *MTXTUF_IPADDRESS
+    #uSystem.uMTxtValues<IBMISRVPSW> := *MTXTUF_IBMISRVPSW
+    #uSystem.uMTxtValues<IBMIPORT> := *MTXTUF_IBMIPORT
+    #uSystem.uMTxtValues<SAVE> := *MTXTUF_SAVE
+    #uSystem.uMTxtValues<SELECTED> := *MTXTUF_SELECTED
+    #uSystem.uMTxtValues<USR_PROF> := *MTXTUF_USR_PROF
+    #uSystem.uMTxtValues<PASSWORD> := *MTXTUF_PASSWORD
+    #uSystem.uMTxtValues<OPEN> := *MTXTUF_OPEN
+    #uSystem.uMTxtValues<OPEN_STATE> := *MTXTUF_OPEN_STATE
+    #uSystem.uMTxtValues<CANCEL1> := *MTXTUF_CANCEL1
+    #uSystem.uMTxtValues<LOGON1> := *MTXTUF_LOGON1
+    #uSystem.uMTxtValues<LOGON2> := *MTXTUF_LOGON2
+    #uSystem.uMTxtValues<OLDPASSWORD> := *MTXTUF_OLDPASSWORD
+    #uSystem.uMTxtValues<NEWPASSWORD> := *MTXTUF_NEWPASSWORD
+    #uSystem.uMTxtValues<PSW_CHANGE> := *MTXTUF_PSW_CHANGE
+    #uSystem.uMTxtValues<CHGIBMIPSW> := *MTXTUF_CHGIBMIPSW
+    #uSystem.uMTxtValues<CONFIRMNEWPW> := *MTXTUF_CONFIRMNEWPW
+    #uSystem.uMTxtValues<PSW_AGAIN> := *MTXTUF_PSW_AGAIN
+    #uSystem.uMTxtValues<LONGPSW> := *MTXTUF_LONGPSW
+    #uSystem.uMTxtValues<NEWPSWERROR> := *MTXTUF_NEWPSWERROR
+    #uSystem.uMTxtValues<NO_USERNAME> := *MTXTUF_NO_USERNAME
+    #uSystem.uMTxtValues<DIS_USERNAME> := *MTXTUF_DIS_USERNAME
+    #uSystem.uMTxtValues<PSW_RULE> := *MTXTUF_PSW_RULE
+    #uSystem.uMTxtValues<ENCRERROR> := *MTXTUF_ENCRERROR
+    #uSystem.uMTxtValues<CONFAIL> := *MTXTUF_CONFAIL
+    #uSystem.uMTxtValues<WRONGPSW> := *MTXTUF_WRONGPSW
+    #uSystem.uMTxtValues<PSW_CHGD> := *MTXTUF_PSW_CHGD
+    #uSystem.uMTxtValues<UNKNOWNERROR> := *MTXTUF_UNKNOWNERROR
+    #uSystem.uMTxtValues<AC029O_01> := *MTXTUF_AC029O_01
+    #uSystem.uMTxtValues<LOGONFAILED> := *MTXTUF_LOGONFAILED
+    
+    #uSystem.uMTxtValues<IBMIPSWEXMSG> := *MTXTUF_IBMIPSWEXMSG
+    #uSystem.uMTxtValues<IBMPSWMSG> := *MTXTUF_IBMPSWMSG
+    #uSystem.uMTxtValues<SIGNONAGAIN> := *MTXTUF_SIGNONAGAIN
+    #uSystem.uMTxtValues<CANCELLED> := *MTXTUF_CANCELLED
+    #uSystem.uMTxtValues<CANCEL_TIMEO> := *MTXTUF_CANCEL_TIMEO
+    #uSystem.uMTxtValues<USRNAUTH> := *MTXTUF_USRNAUTH
+    
+    #uSystem.uMTxtValues<SIGNOFFMSG1> := *MTXTUF_SIGNOFFMSG1
+    #uSystem.uMTxtValues<SIGNOFFMSG2> := *MTXTUF_SIGNOFFMSG2
+    #uSystem.uMTxtValues<SIGNOFFMSG3> := *MTXTUF_SIGNOFFMSG3
+    #uSystem.uMTxtValues<LOGONTIMEOUT> := *MTXTUF_LOGONTIMEOUT
+    #uSystem.uMTxtValues<QUICKSEARCH> := *MTXTUF_QUICKSEARCH
+    
+    #uSystem.uMTxtValues<TECHSUP> := *MTXTUF_TECHSUP
+    #uSystem.uMTxtValues<SENDXL> := *MTXTUF_SENDXL
+    
+    #uSystem.uMTxtValues<Blue> := *MTXTUF_Blue
+    #uSystem.uMTxtValues<Gray> := *MTXTUF_Gray
+    #uSystem.uMTxtValues<red> := *MTXTUF_red
+    #uSystem.uMTxtValues<pink> := *MTXTUF_pink
+    #uSystem.uMTxtValues<YELLOW> := *MTXTUF_YELLOW
+    #uSystem.uMTxtValues<DEEPORANGE> := *MTXTUF_DEEPORANGE
+    #uSystem.uMTxtValues<Indigo> := *MTXTUF_Indigo
+    #uSystem.uMTxtValues<LightBlue> := *MTXTUF_LightBlue
+    #uSystem.uMTxtValues<Green> := *MTXTUF_Green
+    #uSystem.uMTxtValues<DeepPurple> := *MTXTUF_DeepPurple
+    #uSystem.uMTxtValues<Orange> := *MTXTUF_Orange
+    #uSystem.uMTxtValues<Purple> := *MTXTUF_Purple
+    #uSystem.uMTxtValues<amber> := *MTXTUF_amber
+    #uSystem.uMTxtValues<brown> := *MTXTUF_Brown
+    #uSystem.uMTxtValues<Cyan> := *MTXTUF_Cyan
+    #uSystem.uMTxtValues<Teal> := *MTXTUF_Teal
+    #uSystem.uMTxtValues<LightGreen> := *MTXTUF_LightGreen
+    #uSystem.uMTxtValues<Lime> := *MTXTUF_Lime
+    #uSystem.uMTxtValues<BlueGray> := *MTXTUF_BlueGray
+    #uSystem.uMTxtValues<DarkGray> := *MTXTUF_DarkGray
+    #uSystem.uMTxtValues<DarkBlue> := *MTXTUF_DarkBlue
+    
+    #uSystem.uMTxtValues<THEME_CHANGE> := *MTXTUF_THEME_CHANGE
+    
+    #uSystem.uMTxtValues<CLEAR_LIST> := *MTXTUF_CLEAR_LIST
+    #uSystem.uMTxtValues<REFRESH_LIST> := *MTXTUF_REFRESH_LIST
+    
+    #uSystem.uMTxtValues<NOSERVERERR> := *MTXTUF_NOSERVERERR
+    #uSystem.uMTxtValues<CLEARMESSAGE> := *MTXTUF_CLEARMESSAGE
+    #uSystem.uMTxtValues<LOGGEDON> := *MTXTUF_LOGGEDON
+    
+    #uSystem.uMTxtValues<UI002O_1> := *MTXTUF_UI002O_1
+    #uSystem.uMTxtValues<UI002O_2> := *MTXTUF_UI002O_2
+    
+    #uSystem.uMTxtValues<LOADING> := *MTXTUF_LOADING
+    #uSystem.uMTxtValues<SAVING> := *MTXTUF_saving
+    #uSystem.uMTxtValues<ROUNDCORNERS> := *MTXTUF_ROUNDCORNERS
+    #uSystem.uMTxtValues<SEARCHING> := *MTXTUF_SEARCHING
+    
+    #uSystem.uMTxtValues<CORNERS> := *MTXTUF_Corners
+    #uSystem.uMTxtValues<SEARCHFOR> := *MTXTUF_searchfor
+    #uSystem.uMTxtValues<LIMIT> := *MTXTUF_Limit
+    
+    #uSystem.uMTxtValues<CLICKTOSTART> := *MTXTUF_CLICKTOSTART
+    #uSystem.uMTxtValues<TYPETOSTART> := *MTXTUF_TYPETOSTART
+    #uSystem.uMTxtValues<SORT> := *MTXTUF_SORT
+    #uSystem.uMTxtValues<ASCEND_ORDER> := *MTXTUF_ASCEND_ORDER
+    #uSystem.uMTxtValues<DESCEND_ORDER> := *MTXTUF_DESCEND_ORDE
+    #uSystem.uMTxtValues<VIEW_COLUMN> := *MTXTUF_VIEW_COLUMN
+    
+    #uSystem.uMTxtValues<HIDE> := *MTXTUF_HIDE
+    #uSystem.uMTxtValues<SHOW> := *MTXTUF_SHOW
+    
+    #uSystem.uMTxtValues<START_SEARCH> := *MTXTUF_START_SEARCH
+    #uSystem.uMTxtValues<START_SRCH_2> := *MTXTUF_START_SRCH_2
+    #uSystem.uMTxtValues<APPLICATIONS> := *MTXTUF_APPLICATIONS
+    #uSystem.uMTxtValues<STARTED> := *MTXTUF_STARTED
+    
+    #uSystem.uMTxtValues<SY001O_ER001> := *MTXTUF_SY001O_ER001
+    #uSystem.uMTxtValues<SY001O_ER002> := *MTXTUF_SY001O_ER002
+    #uSystem.uMTxtValues<SY001O_ER003> := *MTXTUF_SY001O_ER003
+    #uSystem.uMTxtValues<SY001O_ER004> := *MTXTUF_SY001O_ER004
+    #uSystem.uMTxtValues<SY001O_ER005> := *MTXTUF_SY001O_ER005
+    #uSystem.uMTxtValues<SY001O_ER006> := *MTXTUF_SY001O_ER006
+    #uSystem.uMTxtValues<SY001O_ER007> := *MTXTUF_SY001O_ER007
+    #uSystem.uMTxtValues<SY001O_ER008> := *MTXTUF_SY001O_ER008
+    #uSystem.uMTxtValues<SY001O_ER009> := *MTXTUF_SY001O_ER009
+    #uSystem.uMTxtValues<SY001O_ER010> := *MTXTUF_SY001O_ER010
+    
+    #uSystem.uMTxtValues<STOP_TRACE> := *MTXTUF_STOP_TRACE
+    #uSystem.uMTxtValues<CLEAR_TRACE> := *MTXTUF_CLEAR_TRACE
+    #uSystem.uMTxtValues<CONVERT_CSV> := *MTXTUF_CONVERT_CSV
+    
+    #uSystem.uMTxtValues<UF_SY120_001> := *MTXTUF_SY120_001
+    #uSystem.uMTxtValues<UF_SY120_018> := *MTXTUF_SY120_018
+    #uSystem.uMTxtValues<UF_SY120_019> := *MTXTUF_SY120_019
+    #uSystem.uMTxtValues<UF_SY120_020> := *MTXTUF_SY120_020
+    #uSystem.uMTxtValues<UF_SY120_023> := *MTXTUF_SY120_023
+    
+    #uSystem.uMTxtValues<CONNECTFAIL> := *MTXTUF_CONNECTFAIL
+    #uSystem.uMTxtValues<SERVERNAVAIL> := *MTXTUF_SERVERNAVAIL
+    
+    #uSystem.uMTxtValues<PANELIMIT> := *MTXTUF_PANELIMIT
+    #uSystem.uMTxtValues<GOBACK> := *MTXTUF_GOBACK
+    #uSystem.uMTxtValues<GOFORWARD> := *MTXTUF_GOFORWARD
+    
+    #uSystem.uMTxtValues<SY169O_001> := *MTXTUF_SY169O_001
+    #uSystem.uMTxtValues<CONTACTSERVE> := *MTXTUF_CONTACTSERVE
+    #uSystem.uMTxtValues<FAILED> := *MTXTUF_FAILED
+    #uSystem.uMTxtValues<RECEIVED> := *MTXTUF_RECEIVED
+    
+    #uSystem.uMTxtValues<OLOGON_001> := *MTXTUF_OLOGON_001
+    #uSystem.uMTxtValues<OLOGON_002> := *MTXTUF_OLOGON_002
+    #uSystem.uMTxtValues<OLOGON_003> := *MTXTUF_OLOGON_003
+    
+    #uSystem.uMTxtValues<SW100O_001> := *MTXTUF_SW100O_001
+    #uSystem.uMTxtValues<SW100O_002> := *MTXTUF_SW100O_002
+    #uSystem.uMTxtValues<SW100O_003> := *MTXTUF_SW100O_003
+    #uSystem.uMTxtValues<SW100O_004> := *MTXTUF_SW100O_004
+    #uSystem.uMTxtValues<SW100O_005> := *MTXTUF_SW100O_005
+    #uSystem.uMTxtValues<SW100O_006> := *MTXTUF_SW100O_006
+    #uSystem.uMTxtValues<SW100O_007> := *MTXTUF_SW100O_007
+    #uSystem.uMTxtValues<SW100O_008> := *MTXTUF_SW100O_008
+    #uSystem.uMTxtValues<SW100O_009> := *MTXTUF_SW100O_009
+    #uSystem.uMTxtValues<SW100O_010> := *MTXTUF_SW100O_010
+    
+    #uSystem.uMTxtValues<FAILEDTOLOAD> := *MTXTUF_FAILEDTOLOAD
+    #uSystem.uMTxtValues<RETURNCODE> := *MTXTUF_RETURNCODE
+    #uSystem.uMTxtValues<AUTHUPDATED> := *MTXTUF_AUTHUPDATED
+    #uSystem.uMTxtValues<TEMPDIR> := *MTXTUF_TEMPDIR
+    #uSystem.uMTxtValues<USR_ADMIN> := *MTXTUF_USR_ADMIN
+    #uSystem.uMTxtValues<USR_NOT_ADMN> := *MTXTUF_USR_NOT_ADMN
+    
+    #uSystem.uMTxtValues<USERDISABLED> := *MTXTUF_USERDISABLED
+    #uSystem.uMTxtValues<SIGNONTIME> := *MTXTUF_SIGNONTIME
+    #uSystem.uMTxtValues<SIGNOFFTIME> := *MTXTUF_SIGNOFFTIME
+    #uSystem.uMTxtValues<INACTIVITY> := *MTXTUF_INACTIVITY
+    #uSystem.uMTxtValues<OUMPTY001> := *MTXTUF_OUMPTY001
+    #uSystem.uMTxtValues<OUMPTY002> := *MTXTUF_OUMPTY002
+    #uSystem.uMTxtValues<EMAIL> := *MTXTUF_EMAIL
+    #uSystem.uMTxtValues<DELETE> := *MTXTUF_DELETE
+    #uSystem.uMTxtValues<USERGROUPS> := *MTXTUF_USERGROUPS
+    #uSystem.uMTxtValues<CONFDELUSER> := *MTXTUF_CONFDELUSER
+    #uSystem.uMTxtValues<CH014O_01> := *MTXTUF_CH014O_01
+    #uSystem.uMTxtValues<CH011O_01> := *MTXTUF_CH011O_01
+    
+    #uSystem.uMTxtValues<VF_FL002O_01> := *MTXTUF_VF_FL002O_01
+    #uSystem.uMTxtValues<VF_FL002O_02> := *MTXTUF_VF_FL002O_02
+    #uSystem.uMTxtValues<VF_FL002O_03> := *MTXTUF_VF_FL002O_03
+    #uSystem.uMTxtValues<VF_FL002O_04> := *MTXTUF_VF_FL002O_04
+    #uSystem.uMTxtValues<VF_FL002O_05> := *MTXTUF_VF_FL002O_05
+    #uSystem.uMTxtValues<VF_FL002O_06> := *MTXTUF_VF_FL002O_06
+    
+    #uSystem.uMTxtValues<SHAREDOBJECT> := *MTXTUF_SHAREDOBJECT
+    #uSystem.uMTxtValues<HTTPS> := *MTXTUF_HTTPS
+    #uSystem.uMTxtValues<RTS_PRIVATE> := *MTXTUF_RTS_PRIVATE
+    #uSystem.uMTxtValues<RAMP_TS2> := *MTXTUF_RAMP_TS2
+    #uSystem.uMTxtValues<LOADPATH> := *MTXTUF_LOADPATH
+    #uSystem.uMTxtValues<HOSTPORT> := *MTXTUF_HOSTPORT
+    
+    #uSystem.uMTxtValues<ZOOM> := *MTXTUF_ZOOM
+    #uSystem.uMTxtValues<CHG_ORDER> := *MTXTUF_CHG_ORDER
+    #uSystem.uMTxtValues<MAXOPENCHILD> := *MTXTUF_MAXOPENCHILD
+    
+    #uSystem.uMTxtValues<TESTSUBS> := *MTXTUF_TESTSUBS
+    
+    #uSystem.uMTxtValues<REORDER_TABS> := *MTXTUF_REORDER_TABS
+    #uSystem.uMTxtValues<FILTERTRACE> := *MTXTUF_FILTERTRACE
+    #uSystem.uMTxtValues<SHOWACTIVE> := *MTXTUF_SHOWACTIVE
+    
+    #uSystem.uMTxtValues<STORAGE_UNAV> := *MTXTUF_STORAGE_UNAV
+    #uSystem.uMTxtValues<STORAGE_UN2> := *MTXTUF_STORAGE_UN2
+    
+    #uSystem.uMTxtValues<CAPSLOCK> := *MTXTUF_CAPSLOCK
+    
+    #uSystem.uMTxtValues<NORMAL> := *MTXTUF_NORMAL
+    
+    #uSystem.uMTxtValues<FIRST> := *MTXTUF_FIRST
+    #uSystem.uMTxtValues<LAST> := *MTXTUF_LAST
+    #uSystem.uMTxtValues<PAGINATION> := *MTXTUF_PAGINATION
+    
+    #uSystem.uMTxtValues<AC006O_001> := *MTXTUF_AC006O_001
+    #uSystem.uMTxtValues<AC006O_002> := *MTXTUF_AC006O_002
+    
+    #uSystem.uMTxtValues<SIZETOCONT> := *MTXTUF_SIZETOCONT
+    
+    #uSystem.uMTxtValues<NEW> := *MTXTUF_NEW
+    #uSystem.uMTxtValues<NEWNOTE> := *MTXTUF_NEWNOTE
+    #uSystem.uMTxtValues<NOTESAVAIL> := *MTXTUF_NOTESAVAIL
+    
+    #uSystem.uMTxtValues<CLR_SEL> := *MTXTUF_CLR_SEL
+    
+    #uSystem.uMTxtValues<MOVEFILTER> := *MTXTUF_MOVEFILTER
+    
+    #uSystem.uMTxtValues<CHGTHEME> := *MTXTUF_CHGTHEME
+    #uSystem.uMTxtValues<CHANGETHEME> := *MTXTUF_CHANGETHEME
+    
+    #uSystem.uMTxtValues<NAVMENU> := *MTXTUF_NAVMENU
+    #uSystem.uMTxtValues<RESTART> := *MTXTUF_RESTART
+    
+    #uSystem.uMTxtValues<SERVERFAILED> := *MTXTUF_SERVERFAILED
+    #uSystem.uMTxtValues<HELP_CMD> := *MTXTUF_HELP_CMD
+    #uSystem.uMTxtValues<HELP_FILT> := *MTXTUF_HELP_FILT
+    
+    Endroutine
+    
+    End_Com
+    

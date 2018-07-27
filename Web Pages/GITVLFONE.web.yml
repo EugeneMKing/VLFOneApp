@@ -1,0 +1,55 @@
+﻿Web Page:
+  Name:               GITVLFONE__LaunchPage
+  Enabled For RDMLX:  Yes
+
+  Multilingual Details:
+  - ENG:
+      Description:        "GITVLFONE_ Framework"
+
+  - FRA:
+      Description:        "GITVLFONE_ Framework"
+
+  Source: |
+    * -------------------------------------------------------------------------------------------------------------
+    * This is the customized VLF-ONE entry point (or launch point) form for framework GITVLFONE_ Framework
+    * Created 10th July 2018 by USERID with Material Design style controls.
+    * On the Resources tab (above) the script named VLFONE_Engine.js should be specified to maximize performance.
+    * -------------------------------------------------------------------------------------------------------------
+    
+    Begin_Com Role(*EXTENDS #PRIM_WEB) Layoutmanager(#WebFormLayoutManager)
+    
+    Define_Com Class(#PRIM_ATLM) Name(#WebFormLayoutManager)
+    Define_Com Class(#PRIM_ATLI) Name(#VLF_One_AttachItem) Parent(#WebFormLayoutManager) Attachment(Center) Manage(#VLF_ONE)
+    Define_Com Class(#VF_AC006O) Name(#VLF_ONE) Parent(#COM_OWNER) Height(800) Width(1200)
+    
+    * -------------------------------------------------------------------------------------
+    Evtroutine Handling(#COM_OWNER.CreateInstance)
+    
+    * For more details of the all options available here see - http://%lansadocs%/lansa048/index.htm#lansa/lansa048_8285.htm
+    * To see the link, press the Ctrl key, then mouse over the URL and click to open the information in a browser.
+    
+    
+    * Start VLF-ONE for your framework
+    #VLF_ONE.uInitialize Frameworkidentifer("GITVLFONE__FRAMEWORK") Logonexpiry(90) Logonheaderpanelid("GITVLFON") Logontrailerpanelid("GITVLF_1") Logonhandlerid("VF_AC026O") Passwordchangerid("") Mtxtloaderid(GITVLF_6) Themecustomizerid("")
+    
+    Endroutine
+    
+    * -------------------------------------------------------------------------------------
+    Evtroutine Handling(#SYS_WEB.CloseQuery)
+    
+    If (#VLF_ONE *IsNot *null)
+    #VLF_ONE.uTerminate Possibletocancel(False) Browserisclosing(True)
+    Endif
+    
+    Endroutine
+    
+    End_Com
+
+  Offline Support:    No
+  Allow Zoom:         Yes
+
+  Scripts:
+  - VLFONE_Engine.js
+
+  Loading Screen:
+    Image:              None
