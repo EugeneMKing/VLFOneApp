@@ -1,0 +1,56 @@
+﻿List:
+  Name:               VLFOne
+  Stored As:          Repository
+
+  Objects:
+  - GITVLFONE__LaunchPage:
+      Type:               Web Page
+
+  - GITVLFONE__XCONTACTS_SCRUD_ServerModule:
+      Type:               Server Module
+
+  - xContacts:
+      Type:               File
+      Qualifier:          LL1DTALIB
+
+  - DF_Visual_LANSA_Framework_png:
+      Type:               ExternalResource
+
+  - EXT000001:
+      Type:               ExternalResource
+
+  - EXT000005:
+      Type:               ExternalResource
+
+  - EXT000004:
+      Type:               ExternalResource
+
+  - EXT000003:
+      Type:               ExternalResource
+
+  - EXT000002:
+      Type:               ExternalResource
+
+  - GITVLFONE__ServerSystemManager:
+      Type:               Reusable Part
+
+  - GITVLFONE__LogonTrailer:
+      Type:               Reusable Part
+
+  - GITVLFONE__LogonHeader:
+      Type:               Reusable Part
+
+  - GITVLFONE__XCONTACTS_SCRUD_Filter:
+      Type:               Reusable Part
+
+  - GITVLFONE__XCONTACTS_SCRUD_Handler:
+      Type:               Reusable Part
+
+  - GITVLFONE_OLOGON:
+      Type:               Reusable Part
+
+  - GITVLFONE_OMULTI:
+      Type:               Reusable Part
+
+  - GITVLFONE_OSYSTM:
+      Type:               Reusable Part
